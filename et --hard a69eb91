@@ -1,0 +1,18 @@
+[33m9cffc6e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33mecdd4ac[m HEAD@{1}: reset: moving to HEAD~1
+[33ma69eb91[m HEAD@{2}: reset: moving to HEAD~1
+[33m6e66e23[m HEAD@{3}: commit: clear repo
+[33ma69eb91[m HEAD@{4}: commit: attempted supabase for the 3rd time
+[33mecdd4ac[m HEAD@{5}: reset: moving to HEAD~1
+[33me3c7e8a[m HEAD@{6}: reset: moving to HEAD~1
+[33m237e468[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{7}: commit: Attempted supabase again.
+[33me3c7e8a[m HEAD@{8}: commit: Added supabase to website to test storing data.
+[33mecdd4ac[m HEAD@{9}: commit: Added title tag to index.html.
+[33m9cffc6e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{10}: reset: moving to HEAD~1
+[33m724ac4c[m HEAD@{11}: commit: Added vercel analytics to the website. This allows me to track website views and other analytical data.
+[33m9cffc6e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{12}: commit: Added index.html and deleted test.txt.
+[33m20a67f2[m HEAD@{13}: reset: moving to origin/main
+[33m1cb9666[m HEAD@{14}: commit: Added HTML page
+[33m7fe3d48[m HEAD@{15}: commit: Testing commiting to git
+[33ma81037a[m HEAD@{16}: reset: moving to HEAD
+[33ma81037a[m HEAD@{17}: clone: from https://github.com/funky-san/funkysan-website.git
