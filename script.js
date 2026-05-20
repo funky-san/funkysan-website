@@ -26,3 +26,31 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     console.log(data)
   }
 })
+
+async function loadMessages() {
+  const { data, error } = await supabase
+    .from('contacts')
+    .select('*')
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    console.error(error)
+    return
+  }
+
+  const container = document.getElementById('messages')
+  container.innerHTML = ''
+
+  data.forEach(item => {
+    const div = document.createElement('div')
+    div.innerHTML = `
+      <p><strong>${item.name}</strong></p>
+      <p>${item.email}</p>
+      <p>${item.message}</p>
+      <hr>
+    `
+    container.appendChild(div)
+  })
+}
+
+loadMessages()
