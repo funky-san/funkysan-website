@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>funkysan's website.</title>
+    <link rel="icon" type="image/png" href="/resources/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/anime-list.html">Anime List</a>
-        <a href="/about.html">About Me</a>
+        <a class="nav-bar-logo"href="/">
+            <img class="logo" src="resources/funkysan.png" alt="Logo" class="logo">
+        </a>
+        <a class="nav-bar-item" href="/anime-list.html">anime list</a>
+        <a class="nav-bar-item" href="/notes.html">note taking</a>
+        <a class="nav-bar-item" href="/planner.html">daily planner</a>
+        <a class="right nav-bar-item" href="/signup.html">sign up</a>
+        <a class="nav-bar-item" href="/login.html">login</a>
     </nav>
 
     <form id="contact-form">
@@ -21,5 +27,6 @@
     </form>
 
     <script type="module" src="script.js"></script>
+    <script type="module" src="data.js"></script>
 </body>
 </html>
