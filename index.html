@@ -9,15 +9,41 @@
 </head>
 <body>
     <nav>
-        <a class="nav-bar-logo"href="/">
-            <img class="logo" src="resources/funkysan.png" alt="Logo" class="logo">
+        <a class="nav-bar-logo" href="/">
+            <img class="logo" src="resources/funkysan.png" alt="Logo">
         </a>
         <a class="nav-bar-item" href="/anime-list/">anime list</a>
         <a class="nav-bar-item" href="/notes/">note taking</a>
         <a class="nav-bar-item" href="/planner/">daily planner</a>
-        <a class="right nav-bar-item" href="/">sign up</a>
-        <a class="nav-bar-item" href="/">login</a>
+
+        <span id="nav-username" class="right nav-bar-item" style="display:none"></span>
+        <a id="nav-logout"  class="nav-bar-item" href="#" style="display:none">log out</a>
+        <a id="nav-signup"  class="right nav-bar-item" href="#">sign up</a>
+        <a id="nav-login"   class="nav-bar-item" href="#">login</a>
     </nav>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="auth-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="auth-modal">
+            <button id="modal-close" class="modal-close" aria-label="close">&times;</button>
+            <h2 id="modal-title">welcome back</h2>
+            <form id="auth-form" novalidate>
+                <div class="auth-field">
+                    <label for="auth-email">email</label>
+                    <input id="auth-email" type="email" autocomplete="email" required placeholder="you@example.com">
+                </div>
+                <div class="auth-field">
+                    <label for="auth-password">password</label>
+                    <input id="auth-password" type="password" autocomplete="current-password" required placeholder="••••••••">
+                </div>
+                <button id="auth-submit" type="submit">log in</button>
+                <p id="auth-message" class="auth-message"></p>
+            </form>
+            <p id="auth-switch-text" class="auth-switch">
+                don't have an account? <a id="auth-switch-link" href="#">sign up</a>
+            </p>
+        </div>
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>
