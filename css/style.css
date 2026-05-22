@@ -65,7 +65,8 @@ nav{
     margin: 0;
 
     width: 480px;
-    height: 40%;
+    height: auto;
+    min-height: 450px;
     box-sizing: border-box;
 
     box-shadow: 0 24px 60px rgba(0,0,0,0.18);
