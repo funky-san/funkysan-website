@@ -4,9 +4,10 @@ const SUPABASE_URL = 'https://rhicogywnttlzdiwjlqa.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJoaWNvZ3l3bnR0bHpkaXdqbHFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyNjQ0NzEsImV4cCI6MjA5NDg0MDQ3MX0.69B0vnkYydjRlZYAlGhQrWmo6kqvVui0ThTFL96xs6I';
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// Fixed: match the IDs used in index.html
 const signupBtn = document.getElementById('signup-nav');
 const loginBtn  = document.getElementById('login-nav');
+
+export let isLoggedIn = false;
 
 function setMessage(el, text, isError = false) {
     el.textContent = text;
@@ -15,10 +16,13 @@ function setMessage(el, text, isError = false) {
 
 function updateNav(user) {
     if (user) {
+        isLoggedIn = true;
         const username = user.user_metadata?.username ?? user.email;
-        signupBtn.textContent = 'account';
-        loginBtn.textContent  = username; // display username when logged in
+        signupBtn.classList.add('hidden');    // hide sign up when logged in
+        loginBtn.textContent = username;
     } else {
+        isLoggedIn = false;
+        signupBtn.classList.remove('hidden'); // show sign up when logged out
         signupBtn.textContent = 'sign up';
         loginBtn.textContent  = 'login';
     }
@@ -34,13 +38,10 @@ document.getElementById('signup-form').addEventListener('submit', async e => {
 
     setMessage(msg, 'creating account…');
 
-    // Pass username into user_metadata so it's stored with the account
     const { error } = await supabase.auth.signUp({
         email,
         password,
-        options: {
-            data: { username }
-        }
+        options: { data: { username } }
     });
 
     if (error) {

@@ -1,3 +1,5 @@
+import { isLoggedIn } from './js/data.js';
+
 const login_modal = document.querySelector("#login-modal");
 const signup_modal = document.querySelector("#signup-modal");
 const background = document.querySelector(".modal-background");
@@ -12,32 +14,30 @@ close_modal_button1.onclick = closeModal;
 close_modal_button2.onclick = closeModal;
 
 background.onclick = function (e) {
-    if (e.target === background) {
-        closeModal();
-    }
+    if (e.target === background) closeModal();
 };
 
 nav_signup.onclick = openSignupModal;
-nav_login.onclick = openLoginModal;
+nav_login.onclick = function () {
+    // If logged in, the click is for log-out (handled in data.js) — don't open modal
+    if (!isLoggedIn) openLoginModal();
+};
 link_signup.onclick = openSignupModal;
 link_login.onclick = openLoginModal;
 
-function closeModal()
-{
+function closeModal() {
     background.classList.add('hidden');
     login_modal.classList.add('hidden');
     signup_modal.classList.add('hidden');
 }
 
-function openSignupModal()
-{
+function openSignupModal() {
     background.classList.remove('hidden');
     signup_modal.classList.remove('hidden');
     login_modal.classList.add('hidden');
 }
 
-function openLoginModal()
-{
+function openLoginModal() {
     background.classList.remove('hidden');
     login_modal.classList.remove('hidden');
     signup_modal.classList.add('hidden');
