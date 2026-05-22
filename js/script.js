@@ -1,4 +1,4 @@
-import { isLoggedIn } from './js/data.js';
+import { isLoggedIn } from '/js/data.js';
 
 const login_modal = document.querySelector("#login-modal");
 const signup_modal = document.querySelector("#signup-modal");
