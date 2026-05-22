@@ -16,35 +16,50 @@
         <a class="nav-bar-item" href="/notes/">note taking</a>
         <a class="nav-bar-item" href="/planner/">daily planner</a>
 
-        <span id="nav-username" class="right nav-bar-item" style="display:none"></span>
-        <a id="nav-logout"  class="nav-bar-item" href="#" style="display:none">log out</a>
-        <a id="nav-signup"  class="right nav-bar-item" href="#">sign up</a>
-        <a id="nav-login"   class="nav-bar-item" href="#">login</a>
+        <a class="shift-right"></a>
+        <a id="signup-button" class="nav-bar-item" href="#">sign up</a>
+        <a id="login-button" class="nav-bar-item" href="#">login</a>
     </nav>
 
-    <!-- Auth Modal -->
-    <div id="auth-modal" class="auth-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="auth-modal">
-            <button id="modal-close" class="modal-close" aria-label="close">&times;</button>
-            <h2 id="modal-title">welcome back</h2>
-            <form id="auth-form" novalidate>
-                <div class="auth-field">
-                    <label for="auth-email">email</label>
-                    <input id="auth-email" type="email" autocomplete="email" required placeholder="you@example.com">
-                </div>
-                <div class="auth-field">
-                    <label for="auth-password">password</label>
-                    <input id="auth-password" type="password" autocomplete="current-password" required placeholder="••••••••">
-                </div>
-                <button id="auth-submit" type="submit">log in</button>
-                <p id="auth-message" class="auth-message"></p>
-            </form>
-            <p id="auth-switch-text" class="auth-switch">
-                don't have an account? <a id="auth-switch-link" href="#">sign up</a>
-            </p>
+    <div class="modal-background hidden">
+        <div id="signup-modal" class="modal hidden">
+            <button class="modal-close">×</button>
+            <div class="modal-content">
+                <h2>create account</h2>
+                <form id="signup-form" novalidate>
+                    <label for="signup-email">email</label>
+                    <input id="signup-email" type="email" autocomplete="email" required placeholder="you@example.com">
+
+                    <label for="signup-email">password</label>
+                    <input id="signup-password" type="password" autocomplete="current-password" required placeholder="••••••••">
+
+                    <button id="signup-submit" type="submit">sign up</button>
+                    <p id="signup-message" class="signup-message"></p>
+                </form>
+                <p class="centered">already have account? <a id="login-button" class="link">log in.</a></p>
+            </div>
+        </div>
+
+        <div id="login-modal" class="modal hidden">
+            <button class="modal-close">×</button>
+            <div class="modal-content">
+                <h2>log in</h2>
+                <form id="login-form" novalidate>
+                    <label for="login-email">email</label>
+                    <input id="login-email" type="email" autocomplete="email" required placeholder="you@example.com">
+
+                    <label for="login-email">password</label>
+                    <input id="login-password" type="password" autocomplete="current-password" required placeholder="••••••••">
+
+                    <button id="login-submit" type="submit">log in</button>
+                    <p id="login-message" class="signup-message"></p>
+                </form>
+                <p class="centered">don't have an account? <a id="signup-button" class="link">sign up.</a></p>
+            </div>
         </div>
     </div>
 
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/data.js"></script>
 </body>
 </html>
